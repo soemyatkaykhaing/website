@@ -1,5 +1,6 @@
+from django.urls import reverse_lazy
 from django.views import generic
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 from .models import Album
 
@@ -20,3 +21,15 @@ class DetailView(generic.DetailView):
 class AlbumCreate(CreateView):
     model = Album
     fields = ['artist', 'album_title', 'genre']
+    success_url = reverse_lazy('music:index')
+
+
+class AlbumUpdate(UpdateView):
+    model = Album
+    fields = ['artist', 'album_title', 'genre']
+    success_url = reverse_lazy('music:index')
+
+
+class AlbumDelete(DeleteView):
+    model = Album
+    success_url = reverse_lazy('music:index')

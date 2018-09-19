@@ -14,8 +14,8 @@
     <input type="radio" id="song{{forloop.counter}}" name="song" value="{{song.id}}">
     <label for="song{{forloop.counter}}">
         {{song.song_title}}
+        <br> <a href="{%url 'music:detail' album.id%}" class="btn btn-primary btn-sm">Detail</a>
         {% if song.is_favorite %}
-        favvv
         <img src="http://www.clker.com/cliparts/O/Z/4/Q/W/Q/favourite-md.png" width="30" height="20"/>
         {% endif %}
     </label><br>
